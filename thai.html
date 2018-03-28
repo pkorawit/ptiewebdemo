@@ -96,6 +96,24 @@
 
                 </div>
             </div>
+            <div class="row align-items-center">
+                <div class="col-lg-12 align-items-center">
+                    <div class="p-5">
+                        <h3>Top information source (%)</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-2">
+
+                </div>
+                <div class="col-lg-8">
+                    <canvas id="bar-chart" width="800" height="450"></canvas>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
         </div>
     </section>
     <br>
@@ -174,6 +192,29 @@
                 title: {
                     display: true,
                     text: 'Percentage of travel arrangement'
+                }
+            }
+        });
+    </script>
+    <script>
+        // Bar chart
+        new Chart(document.getElementById("bar-chart"), {
+            type: 'bar',
+            data: {
+                labels: ["Family and Friends", "Past EXP.", "Television", "Magazine", "Travel Agents", "Newspaper", "Online Travel Agents"],
+                datasets: [{
+                    label: "Population (millions)",
+                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850", "#f4b042", "#6bb731"],
+                    data: [44.78, 19.63, 11.25, 8.73, 5.74, 5.05, 3.56, 1.26]
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: 'Top information source (%)'
                 }
             }
         });
